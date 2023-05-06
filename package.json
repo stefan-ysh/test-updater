@@ -1,0 +1,55 @@
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "description": "Hello World!",
+  "scripts": {
+    "start": "electron ."
+  },
+  "main": "main.js",
+  "author": "Jane Doe",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^24.2.0"
+  },
+  "publish": [
+    {
+      "provider": "generic",
+      "url": "http://localhost:9000/test-bucket2"
+    }
+  ],
+  "build": {
+    "appId": "com.electron.todolist",
+    "productName": "eResearch",
+    "asar": true,
+    "copyright": "Copyright © 2022 ysh",
+    "directories": {
+      "output": "release/${version}"
+    },
+    "files": [
+      "dist"
+    ],
+    "mac": {
+      "artifactName": "${productName}_${version}.${ext}",
+      "target": [
+        "dmg"
+      ]
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "${productName}_${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": false
+    }
+  }
+}
