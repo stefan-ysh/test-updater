@@ -1,0 +1,7 @@
+.el-menu {
+  user-select: none;
+}
+.el-input__inner::selection {
+  background-color: #409eff;
+  color: #fff;
+}
